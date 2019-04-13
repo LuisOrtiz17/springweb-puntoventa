@@ -19,13 +19,15 @@
 	<mvc:annotation-driven></mvc:annotation-driven>
 	
 	
+	<!-- BEANS PARA CONFIGURACION DE LENGUAJE -->
 	<bean id="messageSource"
 		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
 	<property name="basename" value="/WEB-INF/messages/messages"></property>
 	</bean>
 	
 	<bean id="localeResolver"
-		class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+	class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+		<!--  class="org.springframework.web.servlet.i18n.CookieLocaleResolver">-->
 		<property name="defaultLocale" value="es" />
 	</bean>
 
@@ -37,7 +39,8 @@
             </bean>
         </mvc:interceptor>
     </mvc:interceptors>
- 
+    
+ <!-- END BEANS PARA CONFIGURACION DE LENGUAJE -->
 	
 	
 </beans>

@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>       
-<!DOCTYPE html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
+<%@ taglib uri="http://www.springframework.org/tags" prefix="s" %> 
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>  
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta charset="ISO-8859-1">
@@ -16,12 +18,16 @@
 	<br />
 	<div class="container mt-5">
 	<h1 class="text-primary text-center">Proveedores</h1>
-	<div class="alert alert-warning alert-dismissible fade show" role="alert">		
-  			<p id="parrafoMensaje">${mensaje}<p>
+	<c:if test="${mensaje != null }">
+	<div class="alert alert-warning alert-dismissible fade show" role="alert">	
+	
+	<p id="parrafoMensaje"><s:message code="${mensaje}" /><p>
+		
   			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
     		<span aria-hidden="true">&times;</span>
   			</button>
 	</div>
+	</c:if>
 	</div>
 	<div class="container mt-5">
 		<div class="row">

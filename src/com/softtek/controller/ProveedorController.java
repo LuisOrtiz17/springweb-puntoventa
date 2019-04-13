@@ -81,10 +81,10 @@ public class ProveedorController {
 					
 		if(listProveedor.isEmpty()) {
 			String message = messageSource.getMessage("nodata", null, null);
-			model.addAttribute("mensaje", message);
+			model.addAttribute("mensaje", "nodata");
 		}else {
 			String message = messageSource.getMessage("buscar", null, null);
-			model.addAttribute("mensaje", message);
+			model.addAttribute("mensaje", "buscar");
 		}
 		
 		return "proveedor";

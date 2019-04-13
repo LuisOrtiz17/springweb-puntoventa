@@ -12,7 +12,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<sec:authorize access="isAuthenticated()">	
+	<!-- <c:import url="/WEB-INF/views/menu.jsp"></c:import>-->
+	<jsp:include page="menu.jsp" />	<br><br><br>
+</sec:authorize>
 Language : <a href="?lang=en">English</a>|<a href="?lang=es">Español</a>
 
 <h1><s:message code="bienvenido" /></h1>
@@ -36,9 +39,7 @@ Current Locale : ${pageContext.response.locale}
 
 </sec:authorize>
 
-<sec:authorize access="isAuthenticated()">	
-	<c:import url="/WEB-INF/views/menu.jsp"></c:import>	
-</sec:authorize>
+
 
 <script type="text/javascript" src='<c:url value="/res/js/jquery.js" />'></script>
 <script type="text/javascript" src='<c:url value="/res/js/popper.min.js" />'></script>
